@@ -44,7 +44,8 @@ const wasteInfo = {
       '🪑 Muebles viejos en desuso',
       '🌿 Restos de poda y pasto'
     ],
-    contener: 'Ramas atadas con hilo. Escombros en bolsas resistentes.',
+    contener:
+      'Ramas atadas con hilo. Escombros en cajas o bolsas bien resistentes.',
     donde: 'En la vereda, el día de recolección'
   },
   reciclables_secos: {
