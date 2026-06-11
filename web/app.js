@@ -14,7 +14,7 @@ const wasteMeta = {
 const wasteInfo = {
   húmedos: {
     ejemplos: 'Restos de comida, yerba, cáscaras, pañales, papel sucio',
-    contener: 'En bolsa negra o cualquier bolsa cerrada'
+    contener: 'En bolsa cerrada'
   },
   verdes_inertes_voluminosos: {
     ejemplos: 'Ramas (hasta 1 m), escombros, restos de poda, muebles en desuso',
@@ -118,9 +118,14 @@ function showInfo(name) {
     const dondeText = info.donde || s.note || ''
     html += `
       <div class="schedule-card ${meta.css}" style="animation-delay:${0.12 + i * 0.1}s">
-        <div class="schedule-type">${meta.emoji} ${meta.label}</div>
-        <div class="waste-info">
+        <div class="schedule-type">
+          <span>${meta.emoji} ${meta.label}</span>
+          <button class="toggle-ejemplos-btn" data-expanded="false">▸</button>
+        </div>
+        <div class="ejemplos-block">
           <div class="waste-info-item"><span class="waste-info-label">🥫 Ejemplos</span><span>${info.ejemplos}</span></div>
+        </div>
+        <div class="waste-info">
           <div class="waste-info-item"><span class="waste-info-label">📦 Cómo contenerlo</span><span>${info.contener}</span></div>
           ${dondeText ? `<div class="waste-info-item"><span class="waste-info-label">📍 Dónde desecharlo</span><span>${dondeText}</span></div>` : ''}
         </div>
@@ -193,6 +198,14 @@ function init() {
     if (!e.target.closest('.search-wrapper')) {
       dropdown.classList.remove('show')
     }
+  })
+
+  resultsDiv.addEventListener('click', e => {
+    const btn = e.target.closest('.toggle-ejemplos-btn')
+    if (!btn) return
+    const expanded = btn.dataset.expanded === 'true'
+    btn.dataset.expanded = !expanded
+    btn.closest('.schedule-card').querySelector('.ejemplos-block').classList.toggle('show')
   })
 
   showWelcome()
