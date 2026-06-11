@@ -1,29 +1,61 @@
 const dayNames = {
-  lunes: 'Lunes', martes: 'Martes', miercoles: 'Miércoles',
-  jueves: 'Jueves', viernes: 'Viernes', sabado: 'Sábado'
+  lunes: 'Lunes',
+  martes: 'Martes',
+  miercoles: 'Miércoles',
+  jueves: 'Jueves',
+  viernes: 'Viernes',
+  sabado: 'Sábado'
 }
 
-const areaClass = { Roja: 'area-roja', Amarilla: 'area-amarilla', Azul: 'area-azul' }
+const areaClass = {
+  Roja: 'area-roja',
+  Amarilla: 'area-amarilla',
+  Azul: 'area-azul'
+}
 
 const wasteMeta = {
   húmedos: { emoji: '📦', label: 'Residuos Húmedos', css: 'humedo' },
-  verdes_inertes_voluminosos: { emoji: '🌿', label: 'Residuos Verdes, Inertes y Voluminosos', css: 'verde' },
-  reciclables_secos: { emoji: '♻️', label: 'Residuos Reciclables Secos', css: 'reciclable' }
+  verdes_inertes_voluminosos: {
+    emoji: '🌿',
+    label: 'Residuos Verdes, Inertes y Voluminosos',
+    css: 'verde'
+  },
+  reciclables_secos: {
+    emoji: '♻️',
+    label: 'Residuos Reciclables Secos',
+    css: 'reciclable'
+  }
 }
 
 const wasteInfo = {
   húmedos: {
-    ejemplos: ['🍎 Restos de comida y cáscaras', '🧉 Yerba, café, saquitos de té', '🥡 Servilletas y papeles sucios', '🧻 Pañales y artículos de higiene'],
-    contener: 'En bolsa cerrada bien anudada'
+    ejemplos: [
+      '🍎 Restos de comida y cáscaras',
+      '🧉 Yerba, café, saquitos de té',
+      '🥡 Servilletas y papeles sucios',
+      '🧻 Pañales y artículos de higiene'
+    ],
+    contener: 'En bolsa cerrada.'
   },
   verdes_inertes_voluminosos: {
-    ejemplos: ['🌳 Ramas (hasta 1 metro)', '🧱 Escombros y restos de obra', '🪑 Muebles viejos en desuso', '🌿 Restos de poda y pasto'],
-    contener: 'Ramas atadas con hilo. Escombros en bolsas resistentes. Muebles tal cual.',
+    ejemplos: [
+      '🌳 Ramas (hasta 1 metro)',
+      '🧱 Escombros y restos de obra',
+      '🪑 Muebles viejos en desuso',
+      '🌿 Restos de poda y pasto'
+    ],
+    contener: 'Ramas atadas con hilo. Escombros en bolsas resistentes.',
     donde: 'En la vereda, el día de recolección'
   },
   reciclables_secos: {
-    ejemplos: ['🥤 Envases de plástico y aluminio', '📦 Cartón y papel limpio y seco', '🍾 Vidrio (botellas y frascos)', '🧴 Envases limpios en general'],
-    contener: 'En caja de cartón, bolsa transparente, bolsa verde, o bolsa identificada como "RECICLABLE". Limpios y secos.',
+    ejemplos: [
+      '🥤 Envases de plástico y aluminio',
+      '📦 Cartón y papel limpio y seco',
+      '🍾 Vidrio (botellas y frascos)',
+      '🧴 Envases limpios en general'
+    ],
+    contener:
+      'En cajas o bolsas identificadas como RECICLABLE. Limpios y Secos.',
     donde: 'Canastos domiciliarios'
   }
 }
@@ -56,22 +88,34 @@ function showWelcome() {
 }
 
 function renderDropdown(filter) {
-  const q = filter.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  const q = filter
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
   currentFiltered = q
-    ? allNeighborhoods.filter(n => n.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(q))
+    ? allNeighborhoods.filter(n =>
+        n
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .includes(q)
+      )
     : allNeighborhoods
 
   if (currentFiltered.length === 0) {
-    dropdown.innerHTML = '<div class="no-results">No encontramos ese barrio</div>'
+    dropdown.innerHTML =
+      '<div class="no-results">No encontramos ese barrio</div>'
     dropdown.classList.add('show')
     return
   }
 
-  dropdown.innerHTML = currentFiltered.map(n => {
-    const info = schedulesByNeighborhood[n]
-    const cls = areaClass[info.area] || ''
-    return `<div class="dropdown-item" data-value="${n}">${n} <span class="area-tag ${cls}">${info.area}</span></div>`
-  }).join('')
+  dropdown.innerHTML = currentFiltered
+    .map(n => {
+      const info = schedulesByNeighborhood[n]
+      const cls = areaClass[info.area] || ''
+      return `<div class="dropdown-item" data-value="${n}">${n} <span class="area-tag ${cls}">${info.area}</span></div>`
+    })
+    .join('')
   dropdown.classList.add('show')
   highlightedIndex = -1
 }
@@ -94,7 +138,11 @@ function showInfo(name) {
     return
   }
 
-  const wasteOrder = ['húmedos', 'verdes_inertes_voluminosos', 'reciclables_secos']
+  const wasteOrder = [
+    'húmedos',
+    'verdes_inertes_voluminosos',
+    'reciclables_secos'
+  ]
   const sorted = [...info.schedules].sort(
     (a, b) => wasteOrder.indexOf(a.wasteType) - wasteOrder.indexOf(b.wasteType)
   )
@@ -157,7 +205,9 @@ function init() {
     }
   }
 
-  allNeighborhoods = Object.keys(schedulesByNeighborhood).sort((a, b) => a.localeCompare(b, 'es'))
+  allNeighborhoods = Object.keys(schedulesByNeighborhood).sort((a, b) =>
+    a.localeCompare(b, 'es')
+  )
 
   searchInput.addEventListener('input', () => renderDropdown(searchInput.value))
 
@@ -170,13 +220,19 @@ function init() {
     if (e.key === 'ArrowDown') {
       e.preventDefault()
       highlightedIndex = Math.min(highlightedIndex + 1, items.length - 1)
-      items.forEach((el, i) => el.classList.toggle('highlighted', i === highlightedIndex))
-      if (items[highlightedIndex]) items[highlightedIndex].scrollIntoView({ block: 'nearest' })
+      items.forEach((el, i) =>
+        el.classList.toggle('highlighted', i === highlightedIndex)
+      )
+      if (items[highlightedIndex])
+        items[highlightedIndex].scrollIntoView({ block: 'nearest' })
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       highlightedIndex = Math.max(highlightedIndex - 1, 0)
-      items.forEach((el, i) => el.classList.toggle('highlighted', i === highlightedIndex))
-      if (items[highlightedIndex]) items[highlightedIndex].scrollIntoView({ block: 'nearest' })
+      items.forEach((el, i) =>
+        el.classList.toggle('highlighted', i === highlightedIndex)
+      )
+      if (items[highlightedIndex])
+        items[highlightedIndex].scrollIntoView({ block: 'nearest' })
     } else if (e.key === 'Enter') {
       e.preventDefault()
       if (highlightedIndex >= 0 && items[highlightedIndex]) {
@@ -206,7 +262,10 @@ function init() {
     const expanded = btn.dataset.expanded === 'true'
     btn.dataset.expanded = !expanded
     btn.textContent = expanded ? '▼ Ejemplos' : '✕ Cerrar'
-    btn.closest('.schedule-card').querySelector('.ejemplos-block').classList.toggle('show')
+    btn
+      .closest('.schedule-card')
+      .querySelector('.ejemplos-block')
+      .classList.toggle('show')
   })
 
   showWelcome()
