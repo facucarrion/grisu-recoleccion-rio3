@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#1a5c2a">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121812">
+<title>Recolección Río Tercero</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🚮 Recolección Río Tercero</h1>
+    <p>Consultá el cronograma de tu barrio</p>
+  </header>
+
+  <div class="search-wrapper">
+    <input type="text" id="searchInput" placeholder="Escribí tu barrio..." autocomplete="off">
+    <div class="dropdown" id="dropdown"></div>
+  </div>
+
+  <div id="results"></div>
+
+  <footer>Ante cualquier duda, consultá con el municipio.</footer>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

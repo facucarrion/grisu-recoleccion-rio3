@@ -1,0 +1,149 @@
+{
+  "areas": [
+    {
+      "name": "Roja",
+      "schedules": [
+        {
+          "wasteType": "húmedos",
+          "note": "Contenedores Comunitarios",
+          "days": ["martes", "jueves", "sabado"],
+          "timeOfDay": "mañana",
+          "neighborhoods": ["El Libertador", "Parque Montegrande", "Montecitos", "Tres Cerros", "Monte Grande", "René Favaloro", "Parque Industrial", "Tribunales", "Marín Maroto", "Atanor"]
+        },
+        {
+          "wasteType": "húmedos",
+          "note": "Contenedores Comunitarios",
+          "days": ["martes", "jueves", "sabado"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Escuela", "Las Violetas", "Belgrano", "Castagnino", "20 de Junio", "Héroes de Malvinas"]
+        },
+        {
+          "wasteType": "verdes_inertes_voluminosos",
+          "note": "Ramas hasta 1 metro de largo",
+          "days": ["jueves"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Castagnino", "20 de Junio", "Héroes de Malvinas", "Parque Industrial", "Tribunales", "Marín Maroto", "Atanor"]
+        },
+        {
+          "wasteType": "verdes_inertes_voluminosos",
+          "note": "Ramas hasta 1 metro de largo",
+          "days": ["viernes"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Parque Monte Grande", "Tres Cerros", "Montegrande", "Montecitos", "René Favaloro"]
+        },
+        {
+          "wasteType": "verdes_inertes_voluminosos",
+          "note": "Ramas hasta 1 metro de largo",
+          "days": ["sabado"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Belgrano", "Escuela", "Las Violetas", "El Libertador"]
+        },
+        {
+          "wasteType": "reciclables_secos",
+          "note": "En cajas o bolsas correctamente identificadas",
+          "days": ["lunes"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Parque Montegrande", "Montecitos", "Tres Cerros", "Monte Grande", "René Favaloro", "Parque Industrial"]
+        },
+        {
+          "wasteType": "reciclables_secos",
+          "note": "En cajas o bolsas correctamente identificadas",
+          "days": ["miercoles", "viernes"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["El Libertador", "Escuela", "Las Violetas", "Belgrano", "Castagnino", "20 de Junio", "Héroes de Malvinas", "Tribunales", "Marin Maroto", "Atanor"]
+        }
+      ]
+    },
+    {
+      "name": "Amarilla",
+      "schedules": [
+        {
+          "wasteType": "húmedos",
+          "note": "Contenedores Comunitarios",
+          "days": ["lunes", "miercoles", "viernes"],
+          "timeOfDay": "mañana",
+          "neighborhoods": ["Cerino", "Media Luna", "Norte", "Villa Elisa", "Intendente Ferrero", "Los Espinillos", "El Portal", "Valle del Río", "Magnasco", "Mitre", "Los Algarrobos", "Teniente Nìvoli", "Parque San Miguel", "Panamericano", "La Romana", "La Conquista", "Aeronáutico", "Bonayre", "Aires del Este", "Sarmiento", "Cabero"]
+        },
+        {
+          "wasteType": "húmedos",
+          "note": "Contenedores Comunitarios",
+          "days": ["lunes", "miercoles", "viernes"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Villa Zoila", "Las Flores", "Acuña", "Sur", "Campo Romero", "La Justina"]
+        },
+        {
+          "wasteType": "verdes_inertes_voluminosos",
+          "note": "Ramas hasta 1 metro de largo",
+          "days": ["lunes"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Cerino", "Media Luna", "Los Espinillos", "Intendente Ferrero", "El Portal", "Valle del Río", "Norte", "Villa Elisa"]
+        },
+        {
+          "wasteType": "verdes_inertes_voluminosos",
+          "note": "Ramas hasta 1 metro de largo",
+          "days": ["martes"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Magnasco", "Los Algarrobos", "Mitre", "Teniente Nívoli", "Parque San Miguel", "Panamericano", "Bonayre", "La Romana", "La Conquista", "Aeronáutico", "Sarmiento", "Cabero"]
+        },
+        {
+          "wasteType": "verdes_inertes_voluminosos",
+          "note": "Ramas hasta 1 metro de largo",
+          "days": ["miercoles"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Acuña", "Campo Romero", "Sur", "La Justina", "Villa Zoila", "Las Flores"]
+        },
+        {
+          "wasteType": "reciclables_secos",
+          "note": "En cajas o bolsas correctamente identificadas",
+          "days": ["martes", "jueves"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Villa Zoila", "Las Flores", "Acuña", "Sur", "Campo Romero", "La Justina"]
+        },
+        {
+          "wasteType": "reciclables_secos",
+          "note": "En cajas o bolsas correctamente identificadas",
+          "days": ["sabado"],
+          "timeOfDay": "mañana",
+          "neighborhoods": ["Cerino", "Media Luna", "Norte", "Villa Elisa", "Intendente Ferrero", "Los Espinillos", "El Portal", "Valle del Río", "Magnasco", "Mitre", "Los Algarrobos", "Teniente Nìvoli", "Parque San Miguel", "Panamericano", "La Romana"]
+        },
+        {
+          "wasteType": "reciclables_secos",
+          "note": "En cajas o bolsas correctamente identificadas",
+          "days": ["sabado"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["La Conquista", "Sarmiento", "Aeronáutico", "Cabero", "Bonayre", "Aires del Este"]
+        }
+      ]
+    },
+    {
+      "name": "Azul",
+      "schedules": [
+        {
+          "wasteType": "húmedos",
+          "note": "Contenedores Comunitarios",
+          "days": ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Centro"]
+        },
+        {
+          "wasteType": "verdes_inertes_voluminosos",
+          "note": "Ramas hasta 1 metro de largo",
+          "days": ["miercoles"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Centro"]
+        },
+        {
+          "wasteType": "reciclables_secos",
+          "note": "En cajas o bolsas correctamente identificadas",
+          "days": ["martes", "jueves"],
+          "timeOfDay": "tarde",
+          "neighborhoods": ["Centro"]
+        }
+      ]
+    }
+  ],
+  "timeRanges": {
+    "mañana": "06:00 - 14:00",
+    "tarde": "14:00 - 22:00"
+  }
+}

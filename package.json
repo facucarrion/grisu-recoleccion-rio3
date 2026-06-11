@@ -1,0 +1,11 @@
+{
+  "name": "recoleccion-rio-tercero",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.10.1"
+  }
+}
