@@ -185,7 +185,7 @@ function showInfo(name) {
         </div>
         <div class="schedule-row">
           <span class="icon">⏰</span>
-          <span><span class="schedule-turno">Por la ${turno}</span> entre las ${hDesde} y las ${hHasta} (una sola vez por día por domicilio)</span>
+          <span><span class="schedule-turno">Por la ${turno}</span> entre las ${hDesde} y las ${hHasta}</span>
         </div>
       </div>`
   })
