@@ -11,6 +11,23 @@ const wasteMeta = {
   reciclables_secos: { emoji: '♻️', label: 'Residuos Reciclables Secos', css: 'reciclable' }
 }
 
+const wasteInfo = {
+  húmedos: {
+    ejemplos: 'Restos de comida, yerba, cáscaras, pañales, papel sucio',
+    contener: 'En bolsa negra o cualquier bolsa cerrada'
+  },
+  verdes_inertes_voluminosos: {
+    ejemplos: 'Ramas (hasta 1 m), escombros, restos de poda, muebles en desuso',
+    contener: 'Ramas atadas. Escombros en bolsas resistentes. Muebles tal cual.',
+    donde: 'En la vereda, el día de recolección'
+  },
+  reciclables_secos: {
+    ejemplos: 'Plástico, cartón, vidrio, aluminio, papel limpio',
+    contener: 'En caja de cartón, bolsa transparente, bolsa verde, o bolsa identificada como "RECICLABLE". Limpios y secos.',
+    donde: 'En contenedores y canastos domiciliarios'
+  }
+}
+
 const searchInput = document.getElementById('searchInput')
 const dropdown = document.getElementById('dropdown')
 const resultsDiv = document.getElementById('results')
@@ -34,6 +51,9 @@ function showWelcome() {
       <div class="big-icon">🏙️</div>
       <h2>Consultá tu barrio</h2>
       <p>Escribí el nombre de tu barrio arriba y te mostramos el cronograma de recolección</p>
+    </div>
+    <div class="card hint-tip">
+      💡 Tocá el <span class="info-btn-mini">?</span> en cada tipo de residuo para ver ejemplos y cómo prepararlos
     </div>`
 }
 
@@ -92,12 +112,19 @@ function showInfo(name) {
       </div>
     </div>`
 
-  for (const s of sorted) {
+  sorted.forEach((s, i) => {
     const meta = wasteMeta[s.wasteType]
+    const info = wasteInfo[s.wasteType]
     const timeLabel = s.timeOfDay === 'mañana' ? 'MAÑANA' : 'TARDE'
+    const dondeText = info.donde || s.note || ''
     html += `
-      <div class="schedule-card ${meta.css}">
-        <div class="schedule-type">${meta.emoji} ${meta.label}</div>
+      <div class="schedule-card ${meta.css}" style="animation-delay:${0.12 + i * 0.1}s">
+        <div class="schedule-type"><span>${meta.emoji} ${meta.label}</span><button class="info-btn" aria-label="Más información">?</button></div>
+        <div class="waste-info">
+          <div class="waste-info-item"><strong>Ejemplos:</strong> ${info.ejemplos}</div>
+          <div class="waste-info-item"><strong>Cómo contenerlo:</strong> ${info.contener}</div>
+          ${dondeText ? `<div class="waste-info-item"><strong>Dónde desecharlo:</strong> ${dondeText}</div>` : ''}
+        </div>
         ${s.note ? `<div class="schedule-note">${s.note}</div>` : ''}
         <div class="schedule-row">
           <span class="icon">🗓️</span>
@@ -108,7 +135,7 @@ function showInfo(name) {
           <span><span class="schedule-time">${timeLabel}</span> de ${DATA.timeRanges[s.timeOfDay]}</span>
         </div>
       </div>`
-  }
+  })
 
   resultsDiv.innerHTML = html
 }
@@ -167,6 +194,13 @@ function init() {
     if (!e.target.closest('.search-wrapper')) {
       dropdown.classList.remove('show')
     }
+  })
+
+  resultsDiv.addEventListener('click', e => {
+    const btn = e.target.closest('.info-btn')
+    if (!btn) return
+    const panel = btn.closest('.schedule-card').querySelector('.waste-info')
+    if (panel) panel.classList.toggle('open')
   })
 
   showWelcome()

@@ -3,8 +3,8 @@ const DATA = {
     {
       "name": "Roja",
       "schedules": [
-        { "wasteType": "húmedos", "note": "Contenedores Comunitarios", "days": ["martes", "jueves", "sabado"], "timeOfDay": "mañana", "neighborhoods": ["El Libertador", "Parque Montegrande", "Montecitos", "Tres Cerros", "Monte Grande", "René Favaloro", "Parque Industrial", "Tribunales", "Marín Maroto", "Atanor"] },
-        { "wasteType": "húmedos", "note": "Contenedores Comunitarios", "days": ["martes", "jueves", "sabado"], "timeOfDay": "tarde", "neighborhoods": ["Escuela", "Las Violetas", "Belgrano", "Castagnino", "20 de Junio", "Héroes de Malvinas"] },
+        { "wasteType": "húmedos", "note": "Usar contenedores y canastos domiciliarios", "days": ["martes", "jueves", "sabado"], "timeOfDay": "mañana", "neighborhoods": ["El Libertador", "Parque Montegrande", "Montecitos", "Tres Cerros", "Monte Grande", "René Favaloro", "Parque Industrial", "Tribunales", "Marín Maroto", "Atanor"] },
+        { "wasteType": "húmedos", "note": "Usar contenedores y canastos domiciliarios", "days": ["martes", "jueves", "sabado"], "timeOfDay": "tarde", "neighborhoods": ["Escuela", "Las Violetas", "Belgrano", "Castagnino", "20 de Junio", "Héroes de Malvinas"] },
         { "wasteType": "verdes_inertes_voluminosos", "note": "Ramas hasta 1 metro de largo", "days": ["jueves"], "timeOfDay": "tarde", "neighborhoods": ["Castagnino", "20 de Junio", "Héroes de Malvinas", "Parque Industrial", "Tribunales", "Marín Maroto", "Atanor"] },
         { "wasteType": "verdes_inertes_voluminosos", "note": "Ramas hasta 1 metro de largo", "days": ["viernes"], "timeOfDay": "tarde", "neighborhoods": ["Parque Monte Grande", "Tres Cerros", "Montegrande", "Montecitos", "René Favaloro"] },
         { "wasteType": "verdes_inertes_voluminosos", "note": "Ramas hasta 1 metro de largo", "days": ["sabado"], "timeOfDay": "tarde", "neighborhoods": ["Belgrano", "Escuela", "Las Violetas", "El Libertador"] },
@@ -15,8 +15,8 @@ const DATA = {
     {
       "name": "Amarilla",
       "schedules": [
-        { "wasteType": "húmedos", "note": "Contenedores Comunitarios", "days": ["lunes", "miercoles", "viernes"], "timeOfDay": "mañana", "neighborhoods": ["Cerino", "Media Luna", "Norte", "Villa Elisa", "Intendente Ferrero", "Los Espinillos", "El Portal", "Valle del Río", "Magnasco", "Mitre", "Los Algarrobos", "Teniente Nìvoli", "Parque San Miguel", "Panamericano", "La Romana", "La Conquista", "Aeronáutico", "Bonayre", "Aires del Este", "Sarmiento", "Cabero"] },
-        { "wasteType": "húmedos", "note": "Contenedores Comunitarios", "days": ["lunes", "miercoles", "viernes"], "timeOfDay": "tarde", "neighborhoods": ["Villa Zoila", "Las Flores", "Acuña", "Sur", "Campo Romero", "La Justina"] },
+        { "wasteType": "húmedos", "note": "Usar contenedores y canastos domiciliarios", "days": ["lunes", "miercoles", "viernes"], "timeOfDay": "mañana", "neighborhoods": ["Cerino", "Media Luna", "Norte", "Villa Elisa", "Intendente Ferrero", "Los Espinillos", "El Portal", "Valle del Río", "Magnasco", "Mitre", "Los Algarrobos", "Teniente Nìvoli", "Parque San Miguel", "Panamericano", "La Romana", "La Conquista", "Aeronáutico", "Bonayre", "Aires del Este", "Sarmiento", "Cabero"] },
+        { "wasteType": "húmedos", "note": "Usar contenedores y canastos domiciliarios", "days": ["lunes", "miercoles", "viernes"], "timeOfDay": "tarde", "neighborhoods": ["Villa Zoila", "Las Flores", "Acuña", "Sur", "Campo Romero", "La Justina"] },
         { "wasteType": "verdes_inertes_voluminosos", "note": "Ramas hasta 1 metro de largo", "days": ["lunes"], "timeOfDay": "tarde", "neighborhoods": ["Cerino", "Media Luna", "Los Espinillos", "Intendente Ferrero", "El Portal", "Valle del Río", "Norte", "Villa Elisa"] },
         { "wasteType": "verdes_inertes_voluminosos", "note": "Ramas hasta 1 metro de largo", "days": ["martes"], "timeOfDay": "tarde", "neighborhoods": ["Magnasco", "Los Algarrobos", "Mitre", "Teniente Nívoli", "Parque San Miguel", "Panamericano", "Bonayre", "La Romana", "La Conquista", "Aeronáutico", "Sarmiento", "Cabero"] },
         { "wasteType": "verdes_inertes_voluminosos", "note": "Ramas hasta 1 metro de largo", "days": ["miercoles"], "timeOfDay": "tarde", "neighborhoods": ["Acuña", "Campo Romero", "Sur", "La Justina", "Villa Zoila", "Las Flores"] },

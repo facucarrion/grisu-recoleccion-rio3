@@ -1,7 +1,7 @@
 Area Roja
 
 RESIDUOS HÚMEDOS:
-(Contenedores Comunitarios)
+(Usar contenedores y canastos domiciliarios)
 MARTES, JUEVES Y SÁBADO POR LA MAÑANA: El Libertador, Parque Montegrande, Montecitos, Tres Cerros, Monte Grande, René Favaloro, Parque Industrial, Tribunales, Marín Maroto, Atanor.
 MARTES, JUEVES Y SÁBADO POR LA TARDE: Escuela, Las Violetas, Belgrano, Castagnino, 20 de Junio, Héroes de Malvinas.
 
@@ -19,7 +19,7 @@ MIÉRCOLES Y VIERNES POR LA TARDE: El Libertador, Escuela, Las Violetas, Belgran
 Area Amarilla
 
 RESIDUOS HÚMEDOS:
-(Contenedores Comunitarios)
+(Usar contenedores y canastos domiciliarios)
 LUNES, MIÉRCOLES Y VIERNES POR LA MAÑANA: Cerino, Media Luna, Norte, Villa Elisa, Intendente Ferrero, Los Espinillos, El Portal, Valle del Río, Magnasco, Mitre, Los Algarrobos, Teniente Nìvoli, Parque San Miguel, Panamericano, La Romana, La Conquista, Aeronáutico, Bonayre, Aires del Este, Sarmiento, Cabero.
 POR LA TARDE: Villa Zoila, Las Flores, Acuña, Sur, Campo Romero, La Justina,
 

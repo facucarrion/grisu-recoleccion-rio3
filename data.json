@@ -5,14 +5,14 @@
       "schedules": [
         {
           "wasteType": "húmedos",
-          "note": "Contenedores Comunitarios",
+          "note": "Usar contenedores y canastos domiciliarios",
           "days": ["martes", "jueves", "sabado"],
           "timeOfDay": "mañana",
           "neighborhoods": ["El Libertador", "Parque Montegrande", "Montecitos", "Tres Cerros", "Monte Grande", "René Favaloro", "Parque Industrial", "Tribunales", "Marín Maroto", "Atanor"]
         },
         {
           "wasteType": "húmedos",
-          "note": "Contenedores Comunitarios",
+          "note": "Usar contenedores y canastos domiciliarios",
           "days": ["martes", "jueves", "sabado"],
           "timeOfDay": "tarde",
           "neighborhoods": ["Escuela", "Las Violetas", "Belgrano", "Castagnino", "20 de Junio", "Héroes de Malvinas"]
@@ -59,14 +59,14 @@
       "schedules": [
         {
           "wasteType": "húmedos",
-          "note": "Contenedores Comunitarios",
+          "note": "Usar contenedores y canastos domiciliarios",
           "days": ["lunes", "miercoles", "viernes"],
           "timeOfDay": "mañana",
           "neighborhoods": ["Cerino", "Media Luna", "Norte", "Villa Elisa", "Intendente Ferrero", "Los Espinillos", "El Portal", "Valle del Río", "Magnasco", "Mitre", "Los Algarrobos", "Teniente Nìvoli", "Parque San Miguel", "Panamericano", "La Romana", "La Conquista", "Aeronáutico", "Bonayre", "Aires del Este", "Sarmiento", "Cabero"]
         },
         {
           "wasteType": "húmedos",
-          "note": "Contenedores Comunitarios",
+          "note": "Usar contenedores y canastos domiciliarios",
           "days": ["lunes", "miercoles", "viernes"],
           "timeOfDay": "tarde",
           "neighborhoods": ["Villa Zoila", "Las Flores", "Acuña", "Sur", "Campo Romero", "La Justina"]
