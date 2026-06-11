@@ -183,76 +183,23 @@ header p { font-size: 14px; opacity: 0.85; }
 .schedule-card.verde { border-color: #558b2f; }
 .schedule-card.reciclable { border-color: #00838f; }
 .schedule-type {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-weight: 700;
   font-size: 16px;
   margin-bottom: 2px;
 }
-.info-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid var(--muted);
-  background: transparent;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-  line-height: 1;
-  flex-shrink: 0;
-}
-.info-btn:hover {
-  background: var(--muted);
-  color: white;
-  transform: scale(1.15);
-}
-.info-btn:active {
-  transform: scale(0.92);
-}
 .waste-info {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.25s ease, margin 0.25s ease;
-  background: var(--dropdown-hover);
-  border-radius: 8px;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
-  padding: 0 12px;
-  margin: 0;
 }
-.waste-info.open {
-  max-height: 300px;
-  opacity: 1;
-  padding: 12px;
-  margin: 10px 0 8px;
+.waste-info-item {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 3px;
 }
-.waste-info-item { margin-bottom: 4px; }
 .waste-info-item:last-child { margin-bottom: 0; }
-.hint-tip {
-  text-align: center;
-  font-size: 14px;
+.waste-info-label {
+  white-space: nowrap;
   color: var(--muted);
-  line-height: 1.6;
-}
-.info-btn-mini {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid var(--muted);
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1;
 }
 .schedule-note {
   font-size: 13px;
@@ -267,10 +214,14 @@ header p { font-size: 14px; opacity: 0.85; }
   margin-bottom: 4px;
 }
 .schedule-row .icon { font-size: 18px; width: 24px; text-align: center; }
-.schedule-time {
-  display: inline-block;
+.schedule-turno {
   font-weight: 700;
-  color: #4caf50;
+  color: #c62828;
+}
+hr.schedule-sep {
+  border: none;
+  border-top: 1px solid rgba(128,128,128,0.15);
+  margin: 10px 0;
 }
 .hidden { display: none; }
 .empty-state {

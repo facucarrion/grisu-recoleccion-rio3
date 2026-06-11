@@ -24,7 +24,7 @@ const wasteInfo = {
   reciclables_secos: {
     ejemplos: 'Plástico, cartón, vidrio, aluminio, papel limpio',
     contener: 'En caja de cartón, bolsa transparente, bolsa verde, o bolsa identificada como "RECICLABLE". Limpios y secos.',
-    donde: 'En contenedores y canastos domiciliarios'
+    donde: 'Canastos domiciliarios'
   }
 }
 
@@ -52,8 +52,6 @@ function showWelcome() {
       <h2>Consultá tu barrio</h2>
       <p>Escribí el nombre de tu barrio arriba y te mostramos el cronograma de recolección</p>
     </div>
-    <div class="card hint-tip">
-      💡 Tocá el <span class="info-btn-mini">?</span> en cada tipo de residuo para ver ejemplos y cómo prepararlos
     </div>`
 }
 
@@ -115,24 +113,25 @@ function showInfo(name) {
   sorted.forEach((s, i) => {
     const meta = wasteMeta[s.wasteType]
     const info = wasteInfo[s.wasteType]
-    const timeLabel = s.timeOfDay === 'mañana' ? 'MAÑANA' : 'TARDE'
+    const [hDesde, hHasta] = DATA.timeRanges[s.timeOfDay].split(' a ')
+    const turno = s.timeOfDay === 'mañana' ? 'mañana' : 'tarde'
     const dondeText = info.donde || s.note || ''
     html += `
       <div class="schedule-card ${meta.css}" style="animation-delay:${0.12 + i * 0.1}s">
-        <div class="schedule-type"><span>${meta.emoji} ${meta.label}</span><button class="info-btn" aria-label="Más información">?</button></div>
+        <div class="schedule-type">${meta.emoji} ${meta.label}</div>
         <div class="waste-info">
-          <div class="waste-info-item"><strong>Ejemplos:</strong> ${info.ejemplos}</div>
-          <div class="waste-info-item"><strong>Cómo contenerlo:</strong> ${info.contener}</div>
-          ${dondeText ? `<div class="waste-info-item"><strong>Dónde desecharlo:</strong> ${dondeText}</div>` : ''}
+          <div class="waste-info-item"><span class="waste-info-label">🥫 Ejemplos</span><span>${info.ejemplos}</span></div>
+          <div class="waste-info-item"><span class="waste-info-label">📦 Cómo contenerlo</span><span>${info.contener}</span></div>
+          ${dondeText ? `<div class="waste-info-item"><span class="waste-info-label">📍 Dónde desecharlo</span><span>${dondeText}</span></div>` : ''}
         </div>
-        ${s.note ? `<div class="schedule-note">${s.note}</div>` : ''}
+        <hr class="schedule-sep">
         <div class="schedule-row">
           <span class="icon">🗓️</span>
           <span>${formatDays(s.days)}</span>
         </div>
         <div class="schedule-row">
           <span class="icon">⏰</span>
-          <span><span class="schedule-time">${timeLabel}</span> de ${DATA.timeRanges[s.timeOfDay]}</span>
+          <span><span class="schedule-turno">Por la ${turno}</span> entre las ${hDesde} y las ${hHasta} (una sola vez por día por domicilio)</span>
         </div>
       </div>`
   })
@@ -194,13 +193,6 @@ function init() {
     if (!e.target.closest('.search-wrapper')) {
       dropdown.classList.remove('show')
     }
-  })
-
-  resultsDiv.addEventListener('click', e => {
-    const btn = e.target.closest('.info-btn')
-    if (!btn) return
-    const panel = btn.closest('.schedule-card').querySelector('.waste-info')
-    if (panel) panel.classList.toggle('open')
   })
 
   showWelcome()
