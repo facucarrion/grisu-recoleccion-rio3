@@ -182,14 +182,6 @@ header p { font-size: 14px; opacity: 0.85; }
 .schedule-card.humedo { border-color: #2e7d32; }
 .schedule-card.verde { border-color: #558b2f; }
 .schedule-card.reciclable { border-color: #00838f; }
-.schedule-type {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 700;
-  font-size: 16px;
-  margin-bottom: 2px;
-}
 .waste-info {
   background: rgba(128,128,128,0.04);
   border-radius: 8px;
@@ -208,46 +200,68 @@ header p { font-size: 14px; opacity: 0.85; }
   white-space: nowrap;
   color: var(--muted);
 }
-.toggle-ejemplos-btn {
-  display: inline-flex;
+.schedule-type {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 1px solid var(--muted);
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.waste-label {
+  font-weight: 700;
+  font-size: 16px;
+  flex: 1;
+}
+.toggle-ejemplos-btn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1.5px solid #4caf50;
   background: transparent;
-  color: var(--muted);
-  font-size: 13px;
+  color: #4caf50;
   cursor: pointer;
-  transition: transform 0.2s, background 0.15s, color 0.15s;
-  line-height: 1;
+  transition: background 0.2s, color 0.2s;
   flex-shrink: 0;
+  line-height: 1.4;
 }
 .toggle-ejemplos-btn:hover {
-  background: var(--muted);
+  background: #4caf50;
   color: white;
 }
 .toggle-ejemplos-btn[data-expanded="true"] {
-  transform: rotate(90deg);
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-color: #2e7d32;
+}
+.toggle-ejemplos-btn[data-expanded="true"]:hover {
+  background: #2e7d32;
+  color: white;
 }
 .ejemplos-block {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease, margin 0.25s ease;
-  background: rgba(128,128,128,0.04);
-  border-radius: 8px;
-  font-size: 13px;
-  line-height: 1.5;
-  padding: 0 12px;
+  background: rgba(76, 175, 80, 0.06);
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 0 14px;
   margin-top: 0;
 }
 .ejemplos-block.show {
-  max-height: 200px;
+  max-height: 400px;
   opacity: 1;
-  padding: 10px 12px;
-  margin-top: 6px;
+  padding: 12px 14px;
+  margin-top: 8px;
+}
+.ejemplo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ejemplo-item + .ejemplo-item {
+  margin-top: 4px;
 }
 .schedule-note {
   font-size: 13px;

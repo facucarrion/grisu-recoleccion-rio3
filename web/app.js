@@ -13,16 +13,16 @@ const wasteMeta = {
 
 const wasteInfo = {
   húmedos: {
-    ejemplos: 'Restos de comida, yerba, cáscaras, pañales, papel sucio',
-    contener: 'En bolsa cerrada'
+    ejemplos: ['🍎 Restos de comida y cáscaras', '🧉 Yerba, café, saquitos de té', '🥡 Servilletas y papeles sucios', '🧻 Pañales y artículos de higiene'],
+    contener: 'En bolsa cerrada bien anudada'
   },
   verdes_inertes_voluminosos: {
-    ejemplos: 'Ramas (hasta 1 m), escombros, restos de poda, muebles en desuso',
-    contener: 'Ramas atadas. Escombros en bolsas resistentes. Muebles tal cual.',
+    ejemplos: ['🌳 Ramas (hasta 1 metro)', '🧱 Escombros y restos de obra', '🪑 Muebles viejos en desuso', '🌿 Restos de poda y pasto'],
+    contener: 'Ramas atadas con hilo. Escombros en bolsas resistentes. Muebles tal cual.',
     donde: 'En la vereda, el día de recolección'
   },
   reciclables_secos: {
-    ejemplos: 'Plástico, cartón, vidrio, aluminio, papel limpio',
+    ejemplos: ['🥤 Envases de plástico y aluminio', '📦 Cartón y papel limpio y seco', '🍾 Vidrio (botellas y frascos)', '🧴 Envases limpios en general'],
     contener: 'En caja de cartón, bolsa transparente, bolsa verde, o bolsa identificada como "RECICLABLE". Limpios y secos.',
     donde: 'Canastos domiciliarios'
   }
@@ -119,11 +119,11 @@ function showInfo(name) {
     html += `
       <div class="schedule-card ${meta.css}" style="animation-delay:${0.12 + i * 0.1}s">
         <div class="schedule-type">
-          <span>${meta.emoji} ${meta.label}</span>
-          <button class="toggle-ejemplos-btn" data-expanded="false">▸</button>
+          <span class="waste-label">${meta.emoji} ${meta.label}</span>
+          <button class="toggle-ejemplos-btn" data-expanded="false">▼ Ejemplos</button>
         </div>
         <div class="ejemplos-block">
-          <div class="waste-info-item"><span class="waste-info-label">🥫 Ejemplos</span><span>${info.ejemplos}</span></div>
+          ${info.ejemplos.map(e => `<div class="ejemplo-item">${e}</div>`).join('')}
         </div>
         <div class="waste-info">
           <div class="waste-info-item"><span class="waste-info-label">📦 Cómo contenerlo</span><span>${info.contener}</span></div>
@@ -205,6 +205,7 @@ function init() {
     if (!btn) return
     const expanded = btn.dataset.expanded === 'true'
     btn.dataset.expanded = !expanded
+    btn.textContent = expanded ? '▼ Ejemplos' : '✕ Cerrar'
     btn.closest('.schedule-card').querySelector('.ejemplos-block').classList.toggle('show')
   })
 
